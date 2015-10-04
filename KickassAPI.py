@@ -234,8 +234,8 @@ class Results(object):
         torrent_link = "http://" + BASE.domain
         if td("a.cellMainLink").attr("href") is not None:
             torrent_link += td("a.cellMainLink").attr("href")
-        magnet_link = td("a[data-nop]").eq(1).attr("href")
-        download_link = td("a[data-download]").attr("href")
+        magnet_link = td("a.icon16[href*='magnet']").attr("href")
+        download_link = td("a.icon16[href*='.torrent']").attr("href")
 
         td_centers = row("td.center")
         size = td_centers.eq(0).text()
